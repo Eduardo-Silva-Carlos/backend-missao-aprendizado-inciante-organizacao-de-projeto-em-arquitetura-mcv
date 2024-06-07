@@ -4,7 +4,7 @@ const { MongoClient, ObjectId } = require('mongodb')
 
 //Prepara aas infomações para o banco de dados 
 const dbUrl = process.env.DATABASE_URL
-const dbName = 'mongodb-intro-e-implementacao'
+const dbName = 'mongodb-arquitetura-mcv'
 
 
 // Funtion async create 

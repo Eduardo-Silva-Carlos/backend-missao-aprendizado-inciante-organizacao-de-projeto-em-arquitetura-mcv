@@ -2,7 +2,7 @@
   "name": "backend-missao-aprendizado-iniciante-organizacao-de-projeto-em-arquitetura-mcv",
   "version": "1.0.0",
   "description": "Projeto da missão de aprendizado Dev-backEnd-JavaScript-iniciante: Organização de Projeto em Arquitetura MVC",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node .",
     "dev": "nodemon ."

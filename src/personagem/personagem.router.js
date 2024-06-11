@@ -1,12 +1,12 @@
 const express = require('express')
-const { readAll, readById, create, updateById, deleteById } = require('./personagem.controller')
+const controller = require('./personagem.controller')
 
 const router = express.Router() 
 
-    router.get('/', readAll )
-    router.get('/ :id ', readById)
-    router.post('/', create )
-    router.put('/:id', updateById)
-    router.delete('/:id', deleteById)
+    router.get('/', controller.readAll )
+    router.get('/ :id ', controller.readById)
+    router.post('/', controller.create )
+    router.put('/:id', controller.updateById)
+    router.delete('/:id', controller.deleteById)
 
 module.exports = router

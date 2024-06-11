@@ -1,24 +1,24 @@
 require('dotenv').config()
 const express = require('express')
 const { connectToDataBase } = require('./db/database-connection')
+
+// Routers
 const personagemRouter = require('./personagem/personagem.router')
-//const { MongoClient, ObjectId } = require('mongodb')
 
-
-// Funtion async create 
+// Declaramos a função main
 async function main() {
+  //Conctamos com os BD 
   await connectToDataBase()
-  //const collection = db.collection('personagem')
-
+  // Inicializamos o express
   const app = express()
   //MiddLewares
   // Sinalizo para o Express que estamos utilizando JSON no body
   app.use(express.json())
-
+// endPoint hello world 
   app.get('/', function (req, res) {
     res.send('Hello World')
   })
-
+// Routers
   app.use('/personagem', personagemRouter)
 
  

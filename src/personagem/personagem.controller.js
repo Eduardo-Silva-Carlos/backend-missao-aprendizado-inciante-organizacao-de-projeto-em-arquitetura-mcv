@@ -34,9 +34,27 @@ async function create(req, res) {
   //Exibimos uma mensagem de sucesso 
   res.status(201).send(newItem)
 }
-function updateById(req, res) {
-  res.send('UpdateById')
+async function updateById(req, res) {
+
+  const id = req.params.id
+
+  // Acessamos o Bory de requisição 
+  const newItem = req.body
+
+  //Checa se o 'nome' esta presente no body
+  if (!newItem || !newItem.nome) {
+    return res.status(400).send('Corpo da requisição conter a propriedade `nome`.')
+  }
+
+ 
+  //Atualizamos no DB um novoItem pelo ID, usando o service
+  await service.updateById(id, newItem)
+  
+  // Eviamos uma mensagem de sucesso 
+  res.send(newItem)
+
 }
+
 function deleteById(req, res) {
   res.send('DeleteById')
 }

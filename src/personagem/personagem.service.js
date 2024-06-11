@@ -24,8 +24,18 @@ function create(newItem) {
     //Adicionamos nome na collection
   return getColletion().insertOne(newItem)
 }
+/**
+ * 
+ * @param {string} id 
+ * @returns 
+ */
 
-function updateById() {
+function updateById(id, newItem) {
+     // Atualizamos na collection  newItem  pelo ID
+     return getColletion().updateOne(
+      { _id: new ObjectId(id) },
+      { $set: newItem }
+    )
 }
 
 function deleteById() {

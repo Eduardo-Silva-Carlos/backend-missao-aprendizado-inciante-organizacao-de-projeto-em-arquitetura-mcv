@@ -20,7 +20,9 @@ function readById(id) {
   return getColletion().findOne({ _id: new ObjectId(id) })
 }
 
-function create() {
+function create(newItem) {
+    //Adicionamos nome na collection
+  return getColletion().insertOne(newItem)
 }
 
 function updateById() {

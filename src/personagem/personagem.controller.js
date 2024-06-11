@@ -46,17 +46,24 @@ async function updateById(req, res) {
     return res.status(400).send('Corpo da requisição conter a propriedade `nome`.')
   }
 
- 
+
   //Atualizamos no DB um novoItem pelo ID, usando o service
   await service.updateById(id, newItem)
-  
   // Eviamos uma mensagem de sucesso 
   res.send(newItem)
 
 }
 
-function deleteById(req, res) {
-  res.send('DeleteById')
+async function deleteById(req, res) {
+  // EndPoint delete [DELETE]/personagem/:id 
+  app.delete('/personagem/:id', async function (req, res) {
+    // Acessamos o parâmentro de rota 
+    const id = req.params.id
+    //Remover o item do DB usando id via service
+    await service.deleteById(id)
+    // Enviamos uma mensagem de sucesso
+    res.send('Item removido com sucesso : ' + id)
+  })
 }
 module.exports = {
   readAll,

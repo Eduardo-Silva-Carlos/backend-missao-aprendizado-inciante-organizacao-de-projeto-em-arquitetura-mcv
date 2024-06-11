@@ -23,22 +23,7 @@ async function main() {
 
   // FIX: Mover isso para pasta  'personagem'
   /*
- 
-  // EndPoint Read BY ID [GET]/personagem/:id
-  app.get('/personagem/:id', async function (req, res) {
-    // Acessando os parametros de rota ID
-    const id = req.params.id
-
-    // Acessa o item na collection usando o ID
-    const item = await collection.findOne({ _id: new ObjectId(id) })
-
-    //Checamos se o item foi obtido é existente 
-    if (!item) {
-      return res.status(404).send('Item não encontrado!')
-    }
-
-    //Enviamos o item como resposta 
-    res.send(item)
+   
   })
 
 

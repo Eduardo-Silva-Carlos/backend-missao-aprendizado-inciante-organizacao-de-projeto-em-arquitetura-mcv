@@ -1,5 +1,9 @@
-function readAll(req, res) {
-  res.send('ReadAll')
+const service = require('./personagem.service')
+
+async function readAll(req, res) {
+  const items = await service.readAll()
+
+  res.send(items)
 }
 function readById(req, res) {
   res.send('ReadById')
@@ -13,7 +17,6 @@ function updateById(req, res) {
 function deleteById(req, res) {
   res.send('DeleteById')
 }
-
 module.exports = {
   readAll,
   readById,

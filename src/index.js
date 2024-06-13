@@ -21,9 +21,9 @@ async function main() {
 // Routers
   app.use('/personagem', personagemRouter)
 
- 
   app.listen(3000, function () {
     console.log("Servidor rodando em : http://localhost:3000")
   })
 }
+// Iniciamos a main 
 main()
